@@ -1,3 +1,10 @@
+package core;
+
+import core.shape.Circle;
+import core.shape.Figure;
+import core.shape.Rectangle;
+import core.shape.Triangle;
+
 import java.util.Scanner;
 
 public class Lesson4FiguresSquare {
@@ -7,7 +14,7 @@ public class Lesson4FiguresSquare {
         Figure currentFigure = null;
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Choose a shape to calculate the area (1 - Circle, 2 - Rectangle, 3 - Triangle): ");
+        System.out.print("Choose a core.shape to calculate the area (1 - Circle, 2 - Rectangle, 3 - Triangle): ");
         int typeFigure = in.nextInt( );
 
         switch (typeFigure) {
@@ -27,13 +34,11 @@ public class Lesson4FiguresSquare {
         }
 
         if (currentFigure != null) {
-            System.out.println("Площадь равна " + currentFigure.area( ));
+            System.out.println("Area " + currentFigure.area( ));
         }
     }
 
-}
-
-    public static double getSide(String nameSide) {
+    private static double getSide(String nameSide) {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Input " + nameSide);
@@ -42,16 +47,11 @@ public class Lesson4FiguresSquare {
         return getNonNegativeNumber(typeFigure);
     }
 
-    public boolean isDigit(double num) {
-
-        return Character.isDigit((int) num));
-    }
-
-    public static double getNonNegativeNumber(double num) {
-
+    private static double getNonNegativeNumber(double num) {
         if (num < 0) {
             return -num;
         } else {
             return num;
         }
     }
+}

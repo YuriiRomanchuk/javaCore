@@ -1,11 +1,13 @@
+package core.shape;
+
 public class Rectangle extends Figure {
 
-    Rectangle(double side1, double side2) {
+    public Rectangle(double side1, double side2) {
         super(side1, side2);
     }
 
     @Override
-    double area() {
+    public double area() {
         return side1*side2;
     }
 
