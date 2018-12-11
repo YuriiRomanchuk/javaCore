@@ -6,8 +6,11 @@ public class MainClass {
         /* MainClass runLessons = new MainClass(); */
         /* runLessons.runLessons(); */
         /* dsf */
-        Lesson4FiguresSquare area = new Lesson4FiguresSquare();
-        area.Lesson4FiguresSquare();
+        //Lesson4FiguresSquare area = new Lesson4FiguresSquare();
+       // area.Lesson4FiguresSquare();
+
+        Termometr grad = new Termometr();
+        grad.Termometr();
     }
 
     public void runLessons(){
