@@ -5,6 +5,7 @@ public class MainClass {
 
         /* MainClass runLessons = new MainClass(); */
         /* runLessons.runLessons(); */
+        /* dsf */
         Lesson4FiguresSquare area = new Lesson4FiguresSquare();
         area.Lesson4FiguresSquare();
     }
