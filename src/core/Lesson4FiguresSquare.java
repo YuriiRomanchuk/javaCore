@@ -4,17 +4,16 @@ import core.shape.Circle;
 import core.shape.Figure;
 import core.shape.Rectangle;
 import core.shape.Triangle;
-
 import java.util.Scanner;
 
 public class Lesson4FiguresSquare {
 
-    public static void main(String args[]) {
+    public void Lesson4FiguresSquare() {
 
         Figure currentFigure = null;
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Choose a core.shape to calculate the area (1 - Circle, 2 - Rectangle, 3 - Triangle): ");
+        System.out.print("Choose a figure to calculate the area (1 - Circle, 2 - Rectangle, 3 - Triangle): ");
         int typeFigure = in.nextInt( );
 
         switch (typeFigure) {
@@ -38,16 +37,16 @@ public class Lesson4FiguresSquare {
         }
     }
 
-    private static double getSide(String nameSide) {
+    private double getSide(String nameSide) {
 
         Scanner in = new Scanner(System.in);
         System.out.print("Input " + nameSide);
-        double typeFigure = in.nextInt( );
+        double typeFigure = in.nextDouble( );
 
         return getNonNegativeNumber(typeFigure);
     }
 
-    private static double getNonNegativeNumber(double num) {
+    private double getNonNegativeNumber(double num) {
         if (num < 0) {
             return -num;
         } else {
