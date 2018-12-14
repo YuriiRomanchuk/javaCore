@@ -24,6 +24,8 @@ public class DistanceBetweenPoints {
         double distance = Math.sqrt(Math.pow(points.get(pointB[0]) - points.get(pointA[0]),2) + Math.pow(points.get(pointB[1]) - points.get(pointA[1]),2));
 
         System.out.println("Distance: " + distance);
+
+
     }
 
     private void getСoordinateOfPoint(String  nameOfCoordinate, Map points, String[] nameOfCoord) {
