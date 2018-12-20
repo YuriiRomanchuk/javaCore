@@ -8,7 +8,7 @@ public class Rectangle extends Figure {
 
     @Override
     public double area() {
-        return side1*side2;
+        return side1 * side2;
     }
 
 }

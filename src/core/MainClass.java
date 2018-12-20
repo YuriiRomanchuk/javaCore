@@ -1,21 +1,21 @@
 package core;
 
 public class MainClass {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         /* MainClass runLessons = new MainClass(); */
         /* runLessons.runLessons(); */
         /* dsf */
         //Lesson4FiguresSquare area = new Lesson4FiguresSquare();
-       // area.Lesson4FiguresSquare();
+        // area.Lesson4FiguresSquare();
 
-        /*Termometr grad = new Termometr();
+       /* Termometr grad = new Termometr();
         grad.Termometr();*/
 
-        /*DistanceBetweenPoints distance = new DistanceBetweenPoints();
-        distance.distanceBetweenPoints();*/
+        DistanceBetweenPoints distance = new DistanceBetweenPoints();
+        distance.distanceBetweenPoints();
 
-        /*int[] arrayTest = {4,5,7,1,2,10,555,66};
+       /* int[] arrayTest = {4,5,7,1,2,10,555,66};
         ArraySorting ArraySorting = new ArraySorting();
 
         int maxValue =  ArraySorting.getMaxValue(arrayTest);
@@ -26,10 +26,10 @@ public class MainClass {
 
     }
 
-    public void runLessons(){
+    public void runLessons() {
 
-        Lesson4FiguresSquare area = new Lesson4FiguresSquare();
-        area.Lesson4FiguresSquare();
+        Lesson4FiguresSquare area = new Lesson4FiguresSquare( );
+        area.Lesson4FiguresSquare( );
 
     }
 }

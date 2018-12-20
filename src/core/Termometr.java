@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Termometr {
 
+    Scanner in = new Scanner(System.in);
 
     public void Termometr() {
 
-        Scanner in = new Scanner(System.in);
         System.out.print("Choose a variant (1 - C to F 2 - F to C): ");
-        int typeGrad = in.nextInt();
+        int typeGrad = in.nextInt( );
 
         switch (typeGrad) {
 
@@ -28,22 +28,17 @@ public class Termometr {
 
     }
 
-
     private double getGrad(String nameSide) {
-
-        Scanner in = new Scanner(System.in);
         System.out.print("Input " + nameSide);
-        double grad = in.nextDouble();
-
-        return grad;
+        return in.nextDouble( );
     }
 
     private double calculateCelsiusTpFahrenheit(double celsius) {
         return (celsius * 1.8) + 32;
     }
 
-    private double calculateFahrenheitToCelsius (double fahrenheit) {
-        return (fahrenheit-32) * 0.56;
+    private double calculateFahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 0.56;
     }
 
 }

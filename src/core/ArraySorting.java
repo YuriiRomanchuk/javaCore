@@ -11,7 +11,7 @@ public class ArraySorting {
 
             maxValue = arrayUnknown[0];
 
-            for (int i = 0; i <= arrayUnknown.length-1; i++) {
+            for (int i = 0; i <= arrayUnknown.length - 1; i++) {
                 if (maxValue < arrayUnknown[i]) {
                     maxValue = arrayUnknown[i];
                 }
@@ -29,7 +29,7 @@ public class ArraySorting {
 
             minValue = arrayUnknown[0];
 
-            for (int i = 0; i <= arrayUnknown.length-1; i++) {
+            for (int i = 0; i <= arrayUnknown.length - 1; i++) {
                 if (minValue > arrayUnknown[i]) {
                     minValue = arrayUnknown[i];
                 }

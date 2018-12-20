@@ -4,6 +4,7 @@ import core.shape.Circle;
 import core.shape.Figure;
 import core.shape.Rectangle;
 import core.shape.Triangle;
+
 import java.util.Scanner;
 
 public class Lesson4FiguresSquare {
