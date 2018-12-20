@@ -1,0 +1,3 @@
+1. Git repositories should never have '.idea' and '*.iml' in it. Add .gitignore file
+2. If you solve multiple lessons in same project - at least put classes in separate packages
+3. You can have multiple main classes if you need (but only in lesson tasks - never do this in real code)

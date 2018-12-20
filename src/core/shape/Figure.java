@@ -1,5 +1,6 @@
 package core.shape;
 
+// TODO: (Eugene) 12/20/2018 a bit strange that any figure has only axactly sides 
 public abstract class Figure {
 
     protected double side1;
