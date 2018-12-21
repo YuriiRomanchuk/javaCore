@@ -9,11 +9,7 @@ public class MainClass {
         //Lesson4FiguresSquare area = new Lesson4FiguresSquare();
         // area.Lesson4FiguresSquare();
 
-       /* Termometr grad = new Termometr();
-        grad.Termometr();*/
 
-        DistanceBetweenPoints distance = new DistanceBetweenPoints();
-        distance.distanceBetweenPoints();
 
        /* int[] arrayTest = {4,5,7,1,2,10,555,66};
         ArraySortingTaskFive ArraySortingTaskFive = new ArraySortingTaskFive();
