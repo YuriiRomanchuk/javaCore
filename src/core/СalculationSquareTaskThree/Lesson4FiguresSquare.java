@@ -1,4 +1,4 @@
-package core;
+package core.СalculationSquareTaskThree;
 
 import core.shape.Circle;
 import core.shape.Figure;

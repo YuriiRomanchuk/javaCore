@@ -1,4 +1,4 @@
-package core;
+package core.ArraySortingTaskFive;
 
 public class ArraySorting {
 

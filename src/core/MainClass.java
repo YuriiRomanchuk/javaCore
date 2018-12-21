@@ -1,5 +1,8 @@
 package core;
 
+import core.DistanceBetweenPointsTaskFour.DistanceBetweenPoints;
+import core.СalculationSquareTaskThree.Lesson4FiguresSquare;
+
 public class MainClass {
     public static void main(String[] args) {
 
@@ -16,20 +19,14 @@ public class MainClass {
         distance.distanceBetweenPoints();
 
        /* int[] arrayTest = {4,5,7,1,2,10,555,66};
-        ArraySorting ArraySorting = new ArraySorting();
+        ArraySortingTaskFive ArraySortingTaskFive = new ArraySortingTaskFive();
 
-        int maxValue =  ArraySorting.getMaxValue(arrayTest);
+        int maxValue =  ArraySortingTaskFive.getMaxValue(arrayTest);
         System.out.println(maxValue);
 
-        int minValue =  ArraySorting.getMinValue(arrayTest);
+        int minValue =  ArraySortingTaskFive.getMinValue(arrayTest);
         System.out.println(minValue);*/
 
     }
 
-    public void runLessons() {
-
-        Lesson4FiguresSquare area = new Lesson4FiguresSquare( );
-        area.Lesson4FiguresSquare( );
-
-    }
 }

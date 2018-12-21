@@ -1,4 +1,4 @@
-package core;
+package core.DistanceBetweenPointsTaskFour;
 
 import java.util.HashMap;
 import java.util.Map;

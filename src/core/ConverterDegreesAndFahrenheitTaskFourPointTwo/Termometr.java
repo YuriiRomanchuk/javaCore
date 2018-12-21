@@ -1,4 +1,4 @@
-package core;
+package core.ConverterDegreesAndFahrenheitTaskFourPointTwo;
 
 import java.util.Scanner;
 
