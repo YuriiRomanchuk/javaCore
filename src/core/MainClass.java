@@ -1,8 +1,5 @@
 package core;
 
-import core.DistanceBetweenPointsTaskFour.DistanceBetweenPoints;
-import core.СalculationSquareTaskThree.Lesson4FiguresSquare;
-
 public class MainClass {
     public static void main(String[] args) {
 
