@@ -1,4 +1,4 @@
-package core.shape;
+package core.СalculationSquareTaskThree;
 
 public class Circle extends Figure {
 

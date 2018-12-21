@@ -1,4 +1,6 @@
-package core.shape;
+package core.СalculationSquareTaskThree;
+
+import core.СalculationSquareTaskThree.Figure;
 
 public class Rectangle extends Figure {
 

@@ -3,43 +3,51 @@ package core.ArraySortingTaskFive;
 public class ArraySorting {
 
 
-    public int getMaxValue(int[] arrayUnknown) {
+    public int[] bubbleSorting(int[] arrayNumbers) {
 
-        int maxValue = 0;
+        boolean nextStep = true;
 
-        if (arrayUnknown.length > 0) {
+        while (nextStep) {
 
-            maxValue = arrayUnknown[0];
+            nextStep = false;
 
-            for (int i = 0; i <= arrayUnknown.length - 1; i++) {
-                if (maxValue < arrayUnknown[i]) {
-                    maxValue = arrayUnknown[i];
+            for (int counter = 1; counter <= arrayNumbers.length - 1; counter++) {
+
+                int temp;
+
+                if (arrayNumbers[counter] < arrayNumbers[counter - 1]) {
+                    temp = arrayNumbers[counter - 1];
+                    arrayNumbers[counter - 1] = arrayNumbers[counter];
+                    arrayNumbers[counter] = temp;
+                    nextStep = true;
                 }
+
             }
+
         }
 
-        return maxValue;
+        return arrayNumbers;
     }
 
-    public int getMinValue(int[] arrayUnknown) {
+    public int[] insertIntoSort(int[] arrayNumbers) {
+        int temp, backCounter;
 
-        int minValue = 0;
-
-        if (arrayUnknown.length > 0) {
-
-            minValue = arrayUnknown[0];
-
-            for (int i = 0; i <= arrayUnknown.length - 1; i++) {
-                if (minValue > arrayUnknown[i]) {
-                    minValue = arrayUnknown[i];
+        for (int i = 0; i < arrayNumbers.length - 1; i++) {
+            if (arrayNumbers[i] > arrayNumbers[i + 1]) {
+                temp = arrayNumbers[i + 1];
+                arrayNumbers[i + 1] = arrayNumbers[i];
+                backCounter = i;
+                while (backCounter > 0 && temp < arrayNumbers[backCounter - 1]) {
+                    arrayNumbers[backCounter] = arrayNumbers[backCounter - 1];
+                    backCounter--;
                 }
+                arrayNumbers[backCounter] = temp;
             }
+
         }
 
-        return minValue;
-    }
+        return arrayNumbers;
 
+    }
 
 }
-
-
