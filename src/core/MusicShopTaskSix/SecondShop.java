@@ -1,5 +1,5 @@
 /*
-package core.shop;
+package core.MusicShopTaskSix;
 
 import java.util.ArrayList;
 import java.util.List;

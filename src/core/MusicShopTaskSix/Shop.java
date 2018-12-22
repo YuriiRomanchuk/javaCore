@@ -1,6 +1,4 @@
-package core.shop;
-
-import java.util.Map;
+package core.MusicShopTaskSix;
 
 public interface Shop {
 

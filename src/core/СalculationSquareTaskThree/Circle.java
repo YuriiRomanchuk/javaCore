@@ -1,13 +1,16 @@
 package core.СalculationSquareTaskThree;
 
-public class Circle extends Figure {
+public class Circle implements Figure {
 
-    public Circle(double side1, double side2) {
-        super(side1, side2);
+    public static String radiusName = "R";
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
     @Override
     public double area() {
-        return Math.PI * Math.pow(side1, 2);
+        return Math.PI * Math.pow(radius, 2);
     }
 }

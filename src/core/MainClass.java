@@ -3,22 +3,6 @@ package core;
 public class MainClass {
     public static void main(String[] args) {
 
-        /* MainClass runLessons = new MainClass(); */
-        /* runLessons.runLessons(); */
-        /* dsf */
-        //Lesson4FiguresSquare area = new Lesson4FiguresSquare();
-        // area.Lesson4FiguresSquare();
-
-
-
-       /* int[] arrayTest = {4,5,7,1,2,10,555,66};
-        ArraySortingTaskFive ArraySortingTaskFive = new ArraySortingTaskFive();
-
-        int maxValue =  ArraySortingTaskFive.getMaxValue(arrayTest);
-        System.out.println(maxValue);
-
-        int minValue =  ArraySortingTaskFive.getMinValue(arrayTest);
-        System.out.println(minValue);*/
 
     }
 

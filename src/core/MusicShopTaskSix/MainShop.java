@@ -1,4 +1,4 @@
-package core.shop;
+package core.MusicShopTaskSix;
 
 public class MainShop implements Shop {
 
