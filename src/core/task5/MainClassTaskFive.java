@@ -1,8 +1,5 @@
 package core.task5;
 
-import core.task5.ArrayExtremum;
-import core.task5.ArraySorting;
-
 import java.util.Arrays;
 
 public class MainClassTaskFive {
@@ -10,17 +7,17 @@ public class MainClassTaskFive {
     public static void main(String[] args) {
 
         int[] arrayNumbers = {4, 5, 7, 1, 2, 10, 555, 66};
-        ArrayExtremum arrayExtremum = new ArrayExtremum();
+        ArrayExtremumCalсulator arrayExtremumCalсulator = new ArrayExtremumCalсulator();
 
-        int maxValue = arrayExtremum.getMaxValue(arrayNumbers);
+        int maxValue = arrayExtremumCalсulator.getMaxValue(arrayNumbers);
         System.out.println(maxValue);
 
-        int minValue = arrayExtremum.getMinValue(arrayNumbers);
+        int minValue = arrayExtremumCalсulator.getMinValue(arrayNumbers);
         System.out.println(minValue);
 
-        ArraySorting arraySorting = new ArraySorting();
-        System.out.println(Arrays.toString(arraySorting.bubbleSorting(arrayNumbers)));
-        System.out.println(Arrays.toString(arraySorting.insertIntoSort(arrayNumbers)));
+        ArraySortingCalculator arraySortingCalculator = new ArraySortingCalculator();
+        System.out.println(Arrays.toString(arraySortingCalculator.bubbleSorting(arrayNumbers)));
+        System.out.println(Arrays.toString(arraySortingCalculator.insertIntoSort(arrayNumbers)));
 
     }
 

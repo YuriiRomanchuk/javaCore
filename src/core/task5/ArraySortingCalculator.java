@@ -1,6 +1,6 @@
 package core.task5;
 
-public class ArraySorting {
+public class ArraySortingCalculator {
 
 
     public int[] bubbleSorting(int[] arrayNumbers) {

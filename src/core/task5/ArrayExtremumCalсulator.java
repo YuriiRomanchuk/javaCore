@@ -1,6 +1,6 @@
 package core.task5;
 
-public class ArrayExtremum {
+public class ArrayExtremumCalсulator {
 
     public int getMaxValue(int[] arrayNumber) {
 
