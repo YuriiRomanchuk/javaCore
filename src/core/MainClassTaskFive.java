@@ -11,17 +11,17 @@ public class MainClassTaskFive {
     public static void main(String[] args) {
 
         int[] arrayNumbers = {4, 5, 7, 1, 2, 10, 555, 66};
-        ArrayExtremum ArrayExtremum = new ArrayExtremum();
+        ArrayExtremum arrayExtremum = new ArrayExtremum();
 
-        int maxValue = ArrayExtremum.getMaxValue(arrayNumbers);
+        int maxValue = arrayExtremum.getMaxValue(arrayNumbers);
         System.out.println(maxValue);
 
-        int minValue = ArrayExtremum.getMinValue(arrayNumbers);
+        int minValue = arrayExtremum.getMinValue(arrayNumbers);
         System.out.println(minValue);
 
-        ArraySorting ArraySorting = new ArraySorting();
-        System.out.println(Arrays.toString(ArraySorting.bubbleSorting(arrayNumbers)));
-        System.out.println(Arrays.toString(ArraySorting.insertIntoSort(arrayNumbers)));
+        ArraySorting arraySorting = new ArraySorting();
+        System.out.println(Arrays.toString(arraySorting.bubbleSorting(arrayNumbers)));
+        System.out.println(Arrays.toString(arraySorting.insertIntoSort(arrayNumbers)));
 
     }
 
