@@ -1,4 +1,4 @@
-package core.СalculationSquareTaskThree;
+package core.task4_1;
 
 import java.io.InputStream;
 import java.util.Scanner;

@@ -1,8 +1,6 @@
-package core.СalculationSquareTaskThree;
+package core.task4_1;
 
-import core.СalculationSquareTaskThree.Figure;
-
-public class Rectangle implements Figure {
+public class IsoscelesTriangle implements Figure {
 
     public static String sideOne = "A";
     public static String sideTwo = "B";
@@ -10,14 +8,14 @@ public class Rectangle implements Figure {
     private double side1;
     private double side2;
 
-    public Rectangle(double side1, double side2) {
+    public IsoscelesTriangle(double side1, double side2) {
         this.side1 = side1;
         this.side2 = side2;
     }
 
     @Override
     public double area() {
-        return side1 * side2;
+        return side1 * side2 / 2;
     }
 
     public double getSide1() {

@@ -1,4 +1,4 @@
-package core.ArraySortingTaskFive;
+package core.task5;
 
 public class ArrayExtremum {
 

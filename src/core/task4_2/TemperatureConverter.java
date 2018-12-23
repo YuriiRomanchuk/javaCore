@@ -1,4 +1,4 @@
-package core.ConverterTemperatureTaskFourPointTwo;
+package core.task4_2;
 
 public class TemperatureConverter {
 

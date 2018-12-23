@@ -1,7 +1,4 @@
-package core;
-
-import core.ConverterTemperatureTaskFourPointTwo.TemperatureConverter;
-import core.ConverterTemperatureTaskFourPointTwo.TemperatureInputController;
+package core.task4_2;
 
 public class MainClassTaskFourPointTwo {
 

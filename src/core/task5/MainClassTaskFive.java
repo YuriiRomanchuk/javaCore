@@ -1,9 +1,8 @@
-package core;
+package core.task5;
 
-import core.ArraySortingTaskFive.ArrayExtremum;
-import core.ArraySortingTaskFive.ArraySorting;
+import core.task5.ArrayExtremum;
+import core.task5.ArraySorting;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MainClassTaskFive {

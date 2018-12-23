@@ -1,4 +1,4 @@
-package core.DistanceBetweenPointsTaskFour;
+package core.task4;
 
 import java.io.InputStream;
 import java.util.Scanner;

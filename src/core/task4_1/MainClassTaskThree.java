@@ -1,8 +1,4 @@
-package core;
-
-import core.СalculationSquareTaskThree.*;
-
-import java.util.Scanner;
+package core.task4_1;
 
 public class MainClassTaskThree {
 

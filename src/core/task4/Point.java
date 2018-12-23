@@ -1,4 +1,4 @@
-package core.DistanceBetweenPointsTaskFour;
+package core.task4;
 
 public class Point {
 

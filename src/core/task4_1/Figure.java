@@ -1,4 +1,4 @@
-package core.СalculationSquareTaskThree;
+package core.task4_1;
 
 public interface Figure {
 

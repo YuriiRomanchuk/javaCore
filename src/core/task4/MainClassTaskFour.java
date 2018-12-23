@@ -1,8 +1,4 @@
-package core;
-
-import core.DistanceBetweenPointsTaskFour.DistanceCalculator;
-import core.DistanceBetweenPointsTaskFour.DistanceInputController;
-import core.DistanceBetweenPointsTaskFour.Point;
+package core.task4;
 
 public class MainClassTaskFour {
 

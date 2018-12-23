@@ -1,4 +1,4 @@
-package core.ConverterTemperatureTaskFourPointTwo;
+package core.task4_2;
 
 import java.io.InputStream;
 import java.util.Scanner;
