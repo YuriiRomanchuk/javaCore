@@ -2,7 +2,7 @@ package core.task4_1;
 
 public class Circle implements Figure {
 
-    public static String radiusName = "R";
+    public static final String RADIUS_NAME = "R";
     private double radius;
 
     public Circle(double radius) {

@@ -2,8 +2,8 @@ package core.task4_1;
 
 public class Rectangle implements Figure {
 
-    public static String sideOne = "A";
-    public static String sideTwo = "B";
+    public static final String SIDE_ONE = "A";
+    public static final String SIDE_TWO = "B";
 
     private double side1;
     private double side2;

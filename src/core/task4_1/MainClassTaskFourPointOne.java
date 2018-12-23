@@ -14,13 +14,13 @@ public class MainClassTaskFourPointOne {
         switch (typeFigure) {
 
             case 1:
-                currentFigure = new Circle(squareInputController.getSideOfFigure(Circle.radiusName));
+                currentFigure = new Circle(squareInputController.getSideOfFigure(Circle.RADIUS_NAME));
                 break;
             case 2:
-                currentFigure = new Rectangle(squareInputController.getSideOfFigure(Rectangle.sideOne), squareInputController.getSideOfFigure(Rectangle.sideTwo));
+                currentFigure = new Rectangle(squareInputController.getSideOfFigure(Rectangle.SIDE_ONE), squareInputController.getSideOfFigure(Rectangle.SIDE_TWO));
                 break;
             case 3:
-                currentFigure = new IsoscelesTriangle(squareInputController.getSideOfFigure(IsoscelesTriangle.sideOne), squareInputController.getSideOfFigure(IsoscelesTriangle.sideOne));
+                currentFigure = new IsoscelesTriangle(squareInputController.getSideOfFigure(IsoscelesTriangle.SIDE_ONE), squareInputController.getSideOfFigure(IsoscelesTriangle.SIDE_ONE));
                 break;
             default:
                 System.out.println("Сurrent number is not equal 1,2 or 3");
