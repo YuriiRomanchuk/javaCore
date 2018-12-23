@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class TemperatureInputController {
-
+    // TODO: (Eugene) 23.12.2018 private...
     Scanner in;
 
     public TemperatureInputController(InputStream inputStream) {

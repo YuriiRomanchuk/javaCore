@@ -4,6 +4,8 @@ public class Point {
 
     private double x;
     private double y;
+
+    // TODO: (Eugene) 23.12.2018 if it's not final, anyone can change it
     public static String nameX = "x";
     public static String nameY = "y";
 

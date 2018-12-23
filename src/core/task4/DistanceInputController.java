@@ -3,8 +3,9 @@ package core.task4;
 import java.io.InputStream;
 import java.util.Scanner;
 
+// TODO: (Eugene) 23.12.2018 too much empty space between methods. One empty line is enough
 public class DistanceInputController {
-
+    // TODO: (Eugene) 23.12.2018 make it private
     Scanner in;
 
     public DistanceInputController(InputStream inputStream) {

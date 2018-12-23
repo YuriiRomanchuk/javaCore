@@ -1,7 +1,7 @@
 package core.task4_1;
 
 public class MainClassTaskFourPointOne {
-
+    // TODO: (Eugene) 23.12.2018 too much empty space in method
     public static void main(String[] args) {
 
 
@@ -14,6 +14,7 @@ public class MainClassTaskFourPointOne {
         switch (typeFigure) {
 
             case 1:
+                // TODO: (Eugene) 23.12.2018 Constants are good. But when you have only one place where you use them - you don't need them
                 currentFigure = new Circle(squareInputController.getSideOfFigure(Circle.RADIUS_NAME));
                 break;
             case 2:
