@@ -1,6 +1,6 @@
 package core.task4_1;
 
-public class MainClassTaskThree {
+public class MainClassTaskFourPointOne {
 
     public static void main(String[] args) {
 
