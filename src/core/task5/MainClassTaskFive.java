@@ -9,10 +9,10 @@ public class MainClassTaskFive {
         int[] arrayNumbers = {4, 5, 7, 1, 2, 10, 555, 66};
         ArrayExtremumCalсulator arrayExtremumCalсulator = new ArrayExtremumCalсulator();
 
-        int maxValue = arrayExtremumCalсulator.getMaxValue(arrayNumbers);
+        int maxValue = arrayExtremumCalсulator.maxValue(arrayNumbers);
         System.out.println(maxValue);
 
-        int minValue = arrayExtremumCalсulator.getMinValue(arrayNumbers);
+        int minValue = arrayExtremumCalсulator.minValue(arrayNumbers);
         System.out.println(minValue);
 
         ArraySortingCalculator arraySortingCalculator = new ArraySortingCalculator();

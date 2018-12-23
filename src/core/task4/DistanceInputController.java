@@ -8,7 +8,7 @@ public class DistanceInputController {
     Scanner in;
 
     public DistanceInputController(InputStream inputStream) {
-        this.in = new Scanner(inputStream );
+        this.in = new Scanner(inputStream);
     }
 
 

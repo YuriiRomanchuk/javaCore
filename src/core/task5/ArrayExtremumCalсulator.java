@@ -2,7 +2,7 @@ package core.task5;
 
 public class ArrayExtremumCalсulator {
 
-    public int getMaxValue(int[] arrayNumber) {
+    public int maxValue(int[] arrayNumber) {
 
         int maxValue = 0;
 
@@ -20,7 +20,7 @@ public class ArrayExtremumCalсulator {
         return maxValue;
     }
 
-    public int getMinValue(int[] arrayNumber) {
+    public int minValue(int[] arrayNumber) {
 
         int minValue = 0;
 

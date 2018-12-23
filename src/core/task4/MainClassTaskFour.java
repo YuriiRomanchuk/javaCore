@@ -16,7 +16,7 @@ public class MainClassTaskFour {
         Point pointB = new Point(coordinateXForB, coordinateYForB);
 
         DistanceCalculator DistanceCalculator = new DistanceCalculator();
-        double distance = DistanceCalculator.getDistanceBetweenPoints(pointA, pointB);
+        double distance = DistanceCalculator.calculateDistanceBetweenPoints(pointA, pointB);
         inputController.showDistance(distance);
 
     }
