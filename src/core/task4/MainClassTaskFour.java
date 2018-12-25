@@ -6,11 +6,11 @@ public class MainClassTaskFour {
 
         DistanceInputController inputController = new DistanceInputController(System.in);
 
-        double coordinateXForA = inputController.getСoordinateOfPoint("A", Point.nameX);
-        double coordinateYForA = inputController.getСoordinateOfPoint("A", Point.nameY);
+        double coordinateXForA = inputController.receiveСoordinateOfPoint("A", Point.nameX);
+        double coordinateYForA = inputController.receiveСoordinateOfPoint("A", Point.nameY);
 
-        double coordinateXForB = inputController.getСoordinateOfPoint("B", Point.nameX);
-        double coordinateYForB = inputController.getСoordinateOfPoint("B", Point.nameY);
+        double coordinateXForB = inputController.receiveСoordinateOfPoint("B", Point.nameX);
+        double coordinateYForB = inputController.receiveСoordinateOfPoint("B", Point.nameY);
 
         Point pointA = new Point(coordinateXForA, coordinateYForA);
         Point pointB = new Point(coordinateXForB, coordinateYForB);

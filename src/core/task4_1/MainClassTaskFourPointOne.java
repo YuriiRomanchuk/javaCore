@@ -9,18 +9,18 @@ public class MainClassTaskFourPointOne {
 
         SquareInputController squareInputController = new SquareInputController(System.in);
 
-        int typeFigure = squareInputController.getVariantOfFigure();
+        int typeFigure = squareInputController.receiveVariantOfFigure();
 
         switch (typeFigure) {
 
             case 1:
-                currentFigure = new Circle(squareInputController.getSideOfFigure(Circle.RADIUS_NAME));
+                currentFigure = new Circle(squareInputController.receiveSideOfFigure(Circle.RADIUS_NAME));
                 break;
             case 2:
-                currentFigure = new Rectangle(squareInputController.getSideOfFigure(Rectangle.SIDE_ONE), squareInputController.getSideOfFigure(Rectangle.SIDE_TWO));
+                currentFigure = new Rectangle(squareInputController.receiveSideOfFigure(Rectangle.SIDE_ONE), squareInputController.receiveSideOfFigure(Rectangle.SIDE_TWO));
                 break;
             case 3:
-                currentFigure = new IsoscelesTriangle(squareInputController.getSideOfFigure(IsoscelesTriangle.SIDE_ONE), squareInputController.getSideOfFigure(IsoscelesTriangle.SIDE_ONE));
+                currentFigure = new IsoscelesTriangle(squareInputController.receiveSideOfFigure(IsoscelesTriangle.SIDE_ONE), squareInputController.receiveSideOfFigure(IsoscelesTriangle.SIDE_ONE));
                 break;
             default:
                 System.out.println("Сurrent number is not equal 1,2 or 3");

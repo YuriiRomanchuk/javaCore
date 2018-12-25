@@ -7,12 +7,12 @@ public class MainClassTaskFive {
     public static void main(String[] args) {
 
         int[] arrayNumbers = {4, 5, 7, 1, 2, 10, 555, 66};
-        ArrayExtremumCalсulator arrayExtremumCalсulator = new ArrayExtremumCalсulator();
+        ArrayExtremumCalculator arrayExtremumCalculator = new ArrayExtremumCalculator();
 
-        int maxValue = arrayExtremumCalсulator.maxValue(arrayNumbers);
+        int maxValue = arrayExtremumCalculator.maxValue(arrayNumbers);
         System.out.println(maxValue);
 
-        int minValue = arrayExtremumCalсulator.minValue(arrayNumbers);
+        int minValue = arrayExtremumCalculator.minValue(arrayNumbers);
         System.out.println(minValue);
 
         ArraySortingCalculator arraySortingCalculator = new ArraySortingCalculator();

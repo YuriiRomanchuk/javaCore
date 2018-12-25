@@ -7,16 +7,16 @@ public class MainClassTaskFourPointTwo {
         TemperatureInputController temperatureInputController = new TemperatureInputController(System.in);
         TemperatureConverter temperatureConverter = new TemperatureConverter();
 
-        int variantOfTemperature = temperatureInputController.getVariantOfTemperature();
+        int variantOfTemperature = temperatureInputController.receiveVariantOfTemperature();
 
         switch (variantOfTemperature) {
 
             case 1:
-                double celsius = temperatureInputController.getTemperature("Celsius");
+                double celsius = temperatureInputController.receiveTemperature("Celsius");
                 System.out.println(temperatureConverter.convertCelsiusToFahrenheit(celsius));
                 break;
             case 2:
-                double fahrenheit = temperatureInputController.getTemperature("Fahrenheit");
+                double fahrenheit = temperatureInputController.receiveTemperature("Fahrenheit");
                 System.out.println(temperatureConverter.convertFahrenheitToCelsius(fahrenheit));
                 break;
             default:

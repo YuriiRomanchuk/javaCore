@@ -3,31 +3,19 @@ package core.task6;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MusicShopOrder {
+public class MusicShopOrderCalculator {
 
     private Map<String, Integer> order = new HashMap<String, Integer>();
 
-    public Map<String, Integer> receiveAnOrder() {
+    public Map<String, Integer> increaseAnOrder(Map<String, Integer> order, String nameOfInstrument, int quantityOfInstrument) {
 
-        System.out.println("Create your order, please: ");
-
-        MusicShopInputController musicShopInputController = new MusicShopInputController(System.in);
-
-        boolean increaseOrder = true;
-
-        while (increaseOrder) {
-
-            String nameOfInstrument = musicShopInputController.receiveNameOfInstrument();
-            int quantityOfInstrument = musicShopInputController.receiveQuantityOfInstrument();
-
-            if (quantityOfInstrument > 0) {
-                int quantityOfInstrumentInOrder = order.get(nameOfInstrument);
-                order.put(nameOfInstrument, quantityOfInstrumentInOrder + quantityOfInstrument);
-            }
-
-        }
+        int quantityOfInstrumentInOrder = order.get(nameOfInstrument);
+        order.put(nameOfInstrument, quantityOfInstrumentInOrder + quantityOfInstrument);
 
         return order;
     }
 
+    public Map<String, Integer> getOrder() {
+        return order;
+    }
 }

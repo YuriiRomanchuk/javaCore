@@ -1,0 +1,6 @@
+
+               /* Collections.emptyList();
+
+                Optional<List<Instrument>> optionalInstrument = Optional.ofNullable(null);
+                optionalInstrument.isEmpty();
+                List<Instrument> instrumentList1 = optionalInstrument.get();*/

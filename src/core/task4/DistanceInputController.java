@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class DistanceInputController {
 
-    Scanner in;
+    private Scanner in;
 
     public DistanceInputController(InputStream inputStream) {
         this.in = new Scanner(inputStream);
     }
 
 
-    public double getСoordinateOfPoint(String nameOfPoint, String nameOfCoordinate) {
+    public double receiveСoordinateOfPoint(String nameOfPoint, String nameOfCoordinate) {
         System.out.print("Point " + nameOfPoint + " Input coordinates of the point " + nameOfCoordinate);
         return in.nextDouble();
     }
