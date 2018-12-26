@@ -9,8 +9,13 @@ public class MusicShopOrderCalculator {
 
     public Map<String, Integer> increaseAnOrder(Map<String, Integer> order, String nameOfInstrument, int quantityOfInstrument) {
 
-        int quantityOfInstrumentInOrder = order.get(nameOfInstrument);
-        order.put(nameOfInstrument, quantityOfInstrumentInOrder + quantityOfInstrument);
+        int quantityOfInstrumentInOrder = 0;
+       
+        if (order.containsKey(nameOfInstrument)) {
+            quantityOfInstrumentInOrder = order.get(nameOfInstrument);  
+        }
+        
+        order.put(nameOfInstrument, quantityOfInstrument + quantityOfInstrumentInOrder);
 
         return order;
     }

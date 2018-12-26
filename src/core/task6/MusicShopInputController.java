@@ -11,34 +11,36 @@ public class MusicShopInputController {
         this.in = new Scanner(inputStream);
     }
 
-
     public int receiveMusicShop() {
-        System.out.println("Select store, please(Input 1 - Main shop, or 2 - Second shop): ");
+        System.out.print("Select store, please(Input 1 - Main shop, or 2 - Second shop): ");
         return in.nextInt();
     }
 
-
     public String receiveNameOfInstrument() {
-        System.out.println("Input name of instrument: ");
-        return in.nextLine();
+        System.out.print("Input name of instrument: ");
+        return in.next();
     }
 
-
     public int receiveQuantityOfInstrument() {
-        System.out.println("Input quantity of instrument: ");
+        System.out.print("Input quantity of instrument: ");
         return in.nextInt();
     }
 
     public boolean receiveAnswerToIncreaseOrder() {
-        System.out.println("Do you want to increase your order?( 1 - Yes, 2 - No): ");
+        System.out.print("Do you want to increase your order?( 1 - Yes, 2 - No): ");
         int answer = in.nextInt();
-        return answer != 1;
+        return answer == 1;
     }
 
     public boolean receiveAnswerToIncreaseAssortment() {
-        System.out.println("Do you want to increase your assortment?( 1 - Yes, 2 - No): ");
+        System.out.print("Do you want to increase your assortment?( 1 - Yes, 2 - No): ");
         int answer = in.nextInt();
-        return answer != 1;
+        return answer == 1;
     }
 
+    public boolean receiveAnswerToINewOrder() {
+        System.out.print("Do you want to create new  order?( 1 - Yes, 2 - No): ");
+        int answer = in.nextInt();
+        return answer == 1;
+    }
 }

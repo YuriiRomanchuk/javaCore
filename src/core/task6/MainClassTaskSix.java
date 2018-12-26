@@ -18,8 +18,22 @@ public class MainClassTaskSix {
             case 1:
                 MainShop mainShop = new MainShop(musicShopInputController);
                 Map<String, List<Instrument>> instrumentAssortmentMap = mainShop.fillAssortment(musicShopAssortmentCalculator);
-                Map<String, Integer> order = mainShop.makeAnOrder(musicShopOrderCalculator);
+                mainShop.showАssortment();
 
+                boolean makeAnOrder = true;
+
+                while (makeAnOrder) {
+                    Map<String, Integer> order = mainShop.makeAnOrder(musicShopOrderCalculator);
+
+                    try {
+                        List<Instrument> prepareInstruments = mainShop.prepareInstruments(order, musicShopAssortmentCalculator);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    mainShop.showАssortment();
+                    makeAnOrder = musicShopInputController.receiveAnswerToINewOrder();
+                }
                 break;
             case 2:
 
@@ -28,7 +42,6 @@ public class MainClassTaskSix {
             default:
                 System.out.println("You have not selected a store. Choose 1 or 2");
                 break;
-
 
         }
 

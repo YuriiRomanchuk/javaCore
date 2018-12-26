@@ -1,8 +1,8 @@
 package core.task6;
 
-public class InstrumentIsNotInAssortmentExceprion extends Exception {
+public class InstrumentIsNotInAssortmentException extends Exception {
 
-    public InstrumentIsNotInAssortmentExceprion(String s) {
+    public InstrumentIsNotInAssortmentException(String s) {
         super(s);
     }
 }

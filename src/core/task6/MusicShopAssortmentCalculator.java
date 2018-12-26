@@ -1,6 +1,7 @@
 package core.task6;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MusicShopAssortmentCalculator {
 
@@ -8,10 +9,10 @@ public class MusicShopAssortmentCalculator {
 
         int quantity = 0;
 
-        List<Instrument> instrumentList = instrumentAssortmenMap.get(nameOfInstrument);
+        Optional<List<Instrument>> optionalInstrument = Optional.ofNullable(instrumentAssortmenMap.get(nameOfInstrument));
 
-        if (instrumentList != null) {
-            quantity = instrumentList.size();
+        if (!optionalInstrument.isEmpty()) {
+            quantity = optionalInstrument.get().size();
         }
 
         return quantity;
@@ -42,25 +43,34 @@ public class MusicShopAssortmentCalculator {
         instruments[1] = "guitar";
         instruments[2] = "trumpet";
 
-        System.out.println("Store assortment:");
+        int minimum = 1;
+        int maximum = 20;
 
         for (int x = 0; x <= instruments.length - 1; x++) {
 
-            List MusicInstrumentsList = new ArrayList();
+            List musicInstrumentsList = new ArrayList();
 
-            int instrumentQuantity = (int) Math.random();
+            int instrumentQuantity = ThreadLocalRandom.current().nextInt(minimum, maximum + 1);
 
             for (int i = 1; i <= instrumentQuantity; i++) {
 
                 Instrument newInstrument = new Instrument(instruments[x]);
-                MusicInstrumentsList.add(newInstrument);
+                musicInstrumentsList.add(newInstrument);
             }
 
-            System.out.println(instruments[0] + " - " + instrumentQuantity);
+            instrumentAssortmenMap.put(instruments[x], musicInstrumentsList);
         }
 
         return instrumentAssortmenMap;
+    }
 
+    public List<Instrument> removeInstrumentFromAssortrment(List<Instrument> musicInstrumentsList, int quantityDeleteInstument) {
+
+        for (int i = quantityDeleteInstument; i >= 0; i--) {
+            musicInstrumentsList.remove(i);
+        }
+
+        return musicInstrumentsList;
     }
 
 }
