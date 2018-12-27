@@ -1,4 +1,4 @@
-package core.task6;
+package core.task6.controllers;
 
 import java.io.InputStream;
 import java.util.Scanner;

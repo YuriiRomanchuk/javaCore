@@ -1,5 +1,10 @@
 package core.task6;
 
+import core.task6.calculators.MusicShopAssortmentCalculator;
+import core.task6.calculators.MusicShopOrderCalculator;
+import core.task6.controllers.MusicShopInputController;
+import core.task6.shops.MainShop;
+
 import java.util.List;
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package core.task6.Calculators;
+package core.task6.calculators;
 
 import core.task6.Instrument;
 
@@ -13,7 +13,7 @@ public class MusicShopAssortmentCalculator {
 
         Optional<List<Instrument>> optionalInstrument = Optional.ofNullable(instrumentAssortmenMap.get(nameOfInstrument));
 
-        if (!optionalInstrument.isEmpty()) {
+        if (optionalInstrument.isPresent()) {
             quantity = optionalInstrument.get().size();
         }
 

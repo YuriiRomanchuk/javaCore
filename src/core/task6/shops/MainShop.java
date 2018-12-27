@@ -1,5 +1,8 @@
-package core.task6;
+package core.task6.shops;
 
+import core.task6.Instrument;
+import core.task6.exceptions.InstrumentIsNotInAssortmentException;
+import core.task6.controllers.MusicShopInputController;
 import core.task6.calculators.MusicShopAssortmentCalculator;
 import core.task6.calculators.MusicShopOrderCalculator;
 
@@ -70,7 +73,7 @@ public class MainShop implements Shop {
                 continue;
             }
 
-            orderHashMap = musicShopOrderCalculator.increaseAnOrder(orderHashMap, nameOfInstrument, quantityOfInstrument);
+            musicShopOrderCalculator.increaseAnOrder(orderHashMap, nameOfInstrument, quantityOfInstrument);
             increaseOrder = musicShopInputController.receiveAnswerToIncreaseOrder();
 
         }

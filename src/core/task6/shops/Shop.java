@@ -1,5 +1,6 @@
-package core.task6;
+package core.task6.shops;
 
+import core.task6.Instrument;
 import core.task6.calculators.MusicShopAssortmentCalculator;
 
 import java.util.List;

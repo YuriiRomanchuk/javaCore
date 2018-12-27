@@ -1,13 +1,11 @@
-package core.task6.Calculators;
+package core.task6.calculators;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MusicShopOrderCalculator {
 
-    private Map<String, Integer> order = new HashMap<String, Integer>();
-
-    public Map<String, Integer> increaseAnOrder(Map<String, Integer> order, String nameOfInstrument, int quantityOfInstrument) {
+    public void increaseAnOrder(Map<String, Integer> order, String nameOfInstrument, int quantityOfInstrument) {
 
         int quantityOfInstrumentInOrder = 0;
        
@@ -16,11 +14,6 @@ public class MusicShopOrderCalculator {
         }
         
         order.put(nameOfInstrument, quantityOfInstrument + quantityOfInstrumentInOrder);
-
-        return order;
     }
 
-    public Map<String, Integer> getOrder() {
-        return order;
-    }
 }

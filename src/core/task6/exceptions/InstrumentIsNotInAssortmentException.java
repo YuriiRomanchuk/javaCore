@@ -1,4 +1,4 @@
-package core.task6;
+package core.task6.exceptions;
 
 public class InstrumentIsNotInAssortmentException extends Exception {
 
