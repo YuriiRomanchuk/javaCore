@@ -12,7 +12,7 @@ public class MusicShopInputController {
     }
 
     public int receiveMusicShop() {
-        System.out.print("Select store, please(Input 1 - main shop, or 2 - second shop): ");
+        System.out.print("Select store, please(Input 1 - Main shop, or 2 - Second shop): ");
         return in.nextInt();
     }
 
