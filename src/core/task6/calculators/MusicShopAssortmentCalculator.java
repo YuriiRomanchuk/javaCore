@@ -1,4 +1,6 @@
-package core.task6;
+package core.task6.Calculators;
+
+import core.task6.Instrument;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -64,13 +66,12 @@ public class MusicShopAssortmentCalculator {
         return instrumentAssortmenMap;
     }
 
-    public List<Instrument> removeInstrumentFromAssortrment(List<Instrument> musicInstrumentsList, int quantityDeleteInstument) {
+    public void removeInstrumentFromAssortrment(List<Instrument> musicInstrumentsList, int quantityDeleteInstument) {
 
         for (int i = quantityDeleteInstument; i >= 0; i--) {
             musicInstrumentsList.remove(i);
         }
 
-        return musicInstrumentsList;
     }
 
 }

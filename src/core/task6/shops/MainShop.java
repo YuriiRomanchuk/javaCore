@@ -1,5 +1,8 @@
 package core.task6;
 
+import core.task6.calculators.MusicShopAssortmentCalculator;
+import core.task6.calculators.MusicShopOrderCalculator;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -126,8 +129,7 @@ public class MainShop implements Shop {
                 throw new IllegalArgumentException("Order has more instruments " + nameOfInstrument + " than in music shop assortment. Lacks:" + (quantityOfInstrument - musicInstrumentsList.size()));
             }
 
-            musicInstrumentsList =  musicShopAssortmentCalculator.removeInstrumentFromAssortrment(musicInstrumentsList, quantityOfInstrument);
-
+            musicShopAssortmentCalculator.removeInstrumentFromAssortrment(musicInstrumentsList, quantityOfInstrument);
         }
 
         return instrumentList;

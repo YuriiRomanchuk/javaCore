@@ -1,4 +1,4 @@
-package core.task6;
+package core.task6.Calculators;
 
 import java.util.HashMap;
 import java.util.Map;
