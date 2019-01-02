@@ -2,9 +2,9 @@ package core.task8.sentient;
 
 abstract public class Sentient {
 
-    String firstName;
-    String lastName;
-    int old;
+    private String firstName;
+    private String lastName;
+    private int old;
 
     public Sentient(String firstName, String lastName, int old) {
 
@@ -13,4 +13,16 @@ abstract public class Sentient {
         this.old = old;
     }
 
+
+    public int getOld() {
+        return old;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

@@ -9,8 +9,13 @@ public class Human extends Sentient {
         this.vegetarian = vegetarian;
     }
 
-
     public boolean isVegetarian() {
         return vegetarian;
     }
+
+    public void setVegetarian(boolean vegetarian) {
+        this.vegetarian = vegetarian;
+    }
 }
+
+

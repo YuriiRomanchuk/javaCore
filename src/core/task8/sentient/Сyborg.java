@@ -8,4 +8,8 @@ public class Сyborg extends Sentient {
         super(firstName, lastName, old);
         this.model = model;
     }
+
+    public String getModel() {
+        return model;
+    }
 }

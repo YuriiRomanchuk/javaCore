@@ -1,32 +1,40 @@
 package core.task8.sentient;
 
+import java.util.Random;
+
 public class PersonalDataGenerator {
+
+    int maximum = 9;
+    int maximumOld = 100;
+    Random random = new Random();
+    private String[] lastNameArray = {"Reinor", "Smith", "Sparrow", "Turner", "Schwarzenegger", "Willis", "Cruise", "Baggins", "Hacker", "Resnick"};
+    private String[] firstNameArray = {"Bruce", "Jim", "Jack", "Will", "Arnold", "Anduin", "Tom", "Frodo", "Sam", "John"};
 
 
     public String generateLastName() {
-        String lastName = "";
-        return lastName;
+        return firstNameArray[randomNumber(maximum)];
     }
 
     public String generateFirstName() {
-        String firstName = "";
-        return firstName;
+        return lastNameArray[randomNumber(maximum)];
     }
 
     public int generateOld() {
-        int old = 0;
-        return old;
+        return randomNumber(maximumOld);
     }
 
     public boolean generateVegetarian() {
-        boolean vegetarian = true;
-        return vegetarian;
+        int vegetarian = randomNumber(2);
+        return vegetarian == 1;
     }
 
 
     public String generateModel() {
-        String model = "";
-        return model;
+        return "T-" + randomNumber(maximumOld);
+    }
+
+    private int randomNumber(int restriction) {
+        return random.nextInt(restriction);
     }
 
 }
