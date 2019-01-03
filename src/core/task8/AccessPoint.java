@@ -26,18 +26,6 @@ public class AccessPoint {
 
         int versionOfTable = inputController.receiveVariantOfTable();
 
-/*        Set<Object> ts = new TreeSet<>();
-        for (List<? extends Object> objectList : classMap.values()) {
-
-            for (Object object : objectList) {
-                ts.add((List<Object>) object);
-            }
-        }
-
-        for(Object currentObject : ts){
-            System.out.println(currentObject);
-        }*/
-
         switch (versionOfTable) {
 
             case 1:

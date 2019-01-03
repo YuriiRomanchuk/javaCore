@@ -17,11 +17,11 @@ public class PersonalDataGenerator {
     }
 
     public String generateLastName() {
-        return firstNameArray[randomNumber(maximum)];
+        return lastNameArray[randomNumber(maximum)];
     }
 
     public String generateFirstName() {
-        return lastNameArray[randomNumber(maximum)];
+        return firstNameArray[randomNumber(maximum)];
     }
 
     public int generateOld() {

@@ -40,12 +40,8 @@ public class OutputController {
         }
     }
 
-
     public void showTableFieldsLite(List<? extends Object> objectList) {
-
         objectList.stream().forEach(e -> System.out.println(e));
-
-
     }
 
     private String receiveSpaceLineBetweenColumn(String fieldName, String fieldValue, String columnSpaceLine) {
