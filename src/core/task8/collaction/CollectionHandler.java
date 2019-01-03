@@ -10,13 +10,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class CollactionService {
+public class CollectionHandler {
 
     private Random random;
     private int maximumSentient = 15;
     private Map<String, List<? extends Object>> objectMap = new HashMap<>();
 
-    public CollactionService(Random random) {
+    public CollectionHandler(Random random) {
         this.random = random;
     }
 

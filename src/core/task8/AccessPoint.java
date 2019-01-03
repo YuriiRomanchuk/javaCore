@@ -1,6 +1,6 @@
 package core.task8;
 
-import core.task8.collaction.CollactionService;
+import core.task8.collaction.CollectionHandler;
 import core.task8.controllers.InputController;
 import core.task8.controllers.OutputController;
 
@@ -20,11 +20,23 @@ public class AccessPoint {
         Random random = new Random();
         OutputController outputController = new OutputController();
         InputController inputController = new InputController(in);
-        CollactionService collactionService = new CollactionService(random);
+        CollectionHandler collectionHandler = new CollectionHandler(random);
 
-        Map<String, List<? extends Object>> classMap = collactionService.receiveObjectMap();
+        Map<String, List<? extends Object>> classMap = collectionHandler.receiveObjectMap();
 
         int versionOfTable = inputController.receiveVariantOfTable();
+
+/*        Set<Object> ts = new TreeSet<>();
+        for (List<? extends Object> objectList : classMap.values()) {
+
+            for (Object object : objectList) {
+                ts.add((List<Object>) object);
+            }
+        }
+
+        for(Object currentObject : ts){
+            System.out.println(currentObject);
+        }*/
 
         switch (versionOfTable) {
 
@@ -32,7 +44,7 @@ public class AccessPoint {
                 Map<Object, Map<String, String>> fieldValueMap = new HashMap<>();
 
                 for (List<? extends Object> objectList : classMap.values()) {
-                    collactionService.transformObjectArrayToFieldValueMap(objectList, fieldValueMap);
+                    collectionHandler.transformObjectArrayToFieldValueMap(objectList, fieldValueMap);
                     outputController.showTableFieldsFull(fieldValueMap);
                 }
                 break;
