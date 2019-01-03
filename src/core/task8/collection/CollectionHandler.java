@@ -1,4 +1,4 @@
-package core.task8.collaction;
+package core.task8.collection;
 
 import core.task8.sentient.Human;
 import core.task8.sentient.PersonalDataGenerator;

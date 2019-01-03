@@ -1,6 +1,6 @@
 package core.task8;
 
-import core.task8.collaction.CollectionHandler;
+import core.task8.collection.CollectionHandler;
 import core.task8.controllers.InputController;
 import core.task8.controllers.OutputController;
 
