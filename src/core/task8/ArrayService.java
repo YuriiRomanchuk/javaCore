@@ -6,6 +6,8 @@ import core.task8.sentient.Sentient;
 import core.task8.sentient.Сyborg;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class ArrayService {
@@ -56,17 +58,14 @@ public class ArrayService {
         Class MetadataObject = currentObject.getClass();
         while (MetadataObject != Object.class) {
             for (Field field : MetadataObject.getDeclaredFields()) {
-                fieldsNameArray.add(field.getName());
+                fieldsNameArray.add(firstUpperCase(field.getName()));
             }
             MetadataObject = MetadataObject.getSuperclass();
         }
         return fieldsNameArray;
     }
 
-   /*добавить в классы методы возвращающие значения полей в стринге!!! для дальнейшего вывода*/
-    public Map<String, List<Object>> transformObjectArrayToMapFieldValueArray(List<? extends Object> currentArrayObject) {
-
-        Map<String, List<Object>> fieldValueMap = new HashMap<>();
+    public void transformObjectArrayToMapFieldValueArray(List<? extends Object> currentArrayObject, Map<String, String> fieldValueMap) {
 
         for (Object currentObject : currentArrayObject) {
 
@@ -75,13 +74,19 @@ public class ArrayService {
             for (String fieldName : fieldsNameArray) {
 
                 if (!fieldValueMap.containsKey(fieldName)) {
-                    fieldValueMap.put(fieldName, new ArrayList<>());
+                    fieldValueMap.put(fieldName, "");
                 }
 
-                List<Object> fieldList = fieldValueMap.get(fieldName);
+                String fieldLine = fieldValueMap.get(fieldName);
                 try {
-                    fieldList.add(currentObject.getClass().getMethod("get" + fieldName));
+                    Method fieldValue =  currentObject.getClass().getMethod("get" + fieldName);
+                    fieldLine = fieldLine + String.valueOf(fieldValue.invoke(currentObject)) + " \n ";
+                    fieldValueMap.put(fieldName, fieldLine);
                 } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
 
@@ -89,7 +94,14 @@ public class ArrayService {
 
         }
 
-        return fieldValueMap;
+    }
+
+
+    private String firstUpperCase(String word){
+
+        if(word == null || word.isEmpty()) return word;
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
+
     }
 
 

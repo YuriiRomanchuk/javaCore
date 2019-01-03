@@ -25,4 +25,5 @@ abstract public class Sentient {
     public String getLastName() {
         return lastName;
     }
+
 }
