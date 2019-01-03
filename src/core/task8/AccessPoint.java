@@ -22,7 +22,7 @@ public class AccessPoint {
         InputController inputController = new InputController(in);
         CollactionService collactionService = new CollactionService(random);
 
-        Map<String, List<? extends Object>> classMap = collactionService.receiveAllClassMap();
+        Map<String, List<? extends Object>> classMap = collactionService.receiveObjectMap();
 
         int versionOfTable = inputController.receiveVariantOfTable();
 
@@ -31,14 +31,14 @@ public class AccessPoint {
             case 1:
                 Map<Object, Map<String, String>> fieldValueMap = new HashMap<>();
 
-                for (Object objectList : classMap.values()) {
-                    collactionService.transformObjectArrayToFieldValueMap((List<? extends Object>) objectList, fieldValueMap);
+                for (List<? extends Object> objectList : classMap.values()) {
+                    collactionService.transformObjectArrayToFieldValueMap(objectList, fieldValueMap);
                     outputController.showTableFieldsFull(fieldValueMap);
                 }
                 break;
             case 2:
-                for (Object objectList : classMap.values()) {
-                    outputController.showTableFieldsLite((List<? extends Object>) objectList);
+                for (List<? extends Object> objectList : classMap.values()) {
+                    outputController.showTableFieldsLite(objectList);
                 }
                 break;
             default:

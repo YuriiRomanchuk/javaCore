@@ -14,16 +14,16 @@ public class CollactionService {
 
     private Random random;
     private int maximumSentient = 15;
-    private Map<String, List<? extends Object>> classMap = new HashMap<>();
+    private Map<String, List<? extends Object>> objectMap = new HashMap<>();
 
     public CollactionService(Random random) {
         this.random = random;
     }
 
-    public Map<String, List<? extends Object>> receiveAllClassMap() {
+    public Map<String, List<? extends Object>> receiveObjectMap() {
 
-        classMap.put("Sentient", fillArraySentient());
-        return classMap;
+        objectMap.put("Sentient", fillArraySentient());
+        return objectMap;
     }
 
     private List<? extends Sentient> fillArraySentient() {
@@ -51,7 +51,7 @@ public class CollactionService {
         return sentientArray;
     }
 
-    private <T> List<String> receiveNameOfObjectField(T currentObject) {
+    private <T> List<String> receiveNameOfFieldObject(T currentObject) {
 
         List<String> fieldsNameArray = new ArrayList<>();
         Class MetadataObject = currentObject.getClass();
@@ -64,13 +64,13 @@ public class CollactionService {
         return fieldsNameArray;
     }
 
-    public void transformObjectArrayToFieldValueMap(List<? extends Object> currentArrayObject, Map<Object, Map<String, String>> fieldValueMap) {
+    public void transformObjectArrayToFieldValueMap(List<? extends Object> currentObjectArray, Map<Object, Map<String, String>> fieldValueMap) {
 
-        Map<String, String> objectFieldNameMap = createAllObjectFieldsNameMap(currentArrayObject);
+        Map<String, String> objectFieldNameMap = createFullObjectFieldsNameMap(currentObjectArray);
 
         fieldValueMap.put("ColumnName", objectFieldNameMap);
 
-        for (Object currentObject : currentArrayObject) {
+        for (Object currentObject : currentObjectArray) {
 
             if (!fieldValueMap.containsKey(currentObject)) {
                 fieldValueMap.put(currentObject, new HashMap<>());
@@ -107,13 +107,13 @@ public class CollactionService {
 
     }
 
-    private Map<String, String> createAllObjectFieldsNameMap(List<? extends Object> currentArrayObject) {
+    private Map<String, String> createFullObjectFieldsNameMap(List<? extends Object> currentArrayObject) {
 
         Map<String, String> fieldsNameMap = new HashMap<>();
 
         for (Object currentObject : currentArrayObject) {
 
-            List<String> nameOfObjectField = receiveNameOfObjectField(currentObject);
+            List<String> nameOfObjectField = receiveNameOfFieldObject(currentObject);
 
             for (String currentField : nameOfObjectField) {
                 if (!fieldsNameMap.containsKey(currentObject)) {
