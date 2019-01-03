@@ -1,5 +1,6 @@
 package core.task8;
 
+import core.task8.collaction.CollactionService;
 import core.task8.controllers.InputController;
 import core.task8.controllers.OutputController;
 
@@ -14,7 +15,7 @@ public class AccessPoint {
         this.in = new Scanner(inputStream);
     }
 
-    public void StratProgram() {
+    public void StartProgram() {
 
         Random random = new Random();
         OutputController outputController = new OutputController();
