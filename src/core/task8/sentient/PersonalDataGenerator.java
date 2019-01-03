@@ -4,12 +4,17 @@ import java.util.Random;
 
 public class PersonalDataGenerator {
 
-    int maximum = 9;
+    int maximum = 8;
+    int minimum = 1;
     int maximumOld = 100;
-    Random random = new Random();
+    Random random;
     private String[] lastNameArray = {"Reinor", "Smith", "Sparrow", "Turner", "Schwarzenegger", "Willis", "Cruise", "Baggins", "Hacker", "Resnick"};
     private String[] firstNameArray = {"Bruce", "Jim", "Jack", "Will", "Arnold", "Anduin", "Tom", "Frodo", "Sam", "John"};
 
+
+    public PersonalDataGenerator(Random random) {
+        this.random = random;
+    }
 
     public String generateLastName() {
         return firstNameArray[randomNumber(maximum)];
@@ -28,13 +33,12 @@ public class PersonalDataGenerator {
         return vegetarian == 1;
     }
 
-
     public String generateModel() {
         return "T-" + randomNumber(maximumOld);
     }
 
     private int randomNumber(int restriction) {
-        return random.nextInt(restriction);
+        return random.nextInt(restriction) + minimum;
     }
 
 }

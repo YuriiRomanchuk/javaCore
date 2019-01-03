@@ -12,4 +12,9 @@ public class Сyborg extends Sentient {
     public String getModel() {
         return model;
     }
+
+    @Override
+    public String toString() {
+        return "Cyborg { " + super.toString() + "model:" + model + "}";
+    }
 }

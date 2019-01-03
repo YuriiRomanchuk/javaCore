@@ -26,4 +26,8 @@ abstract public class Sentient {
         return lastName;
     }
 
+    @Override
+    public String toString() {
+        return "firstName: " + firstName + "  " + "lastName: " + lastName + "  " + "old: " + old + "  ";
+    }
 }

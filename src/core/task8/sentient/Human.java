@@ -9,10 +9,16 @@ public class Human extends Sentient {
         this.vegetarian = vegetarian;
     }
 
-    public String  getVegetarian() {
+    public String getVegetarian() {
         return "" + vegetarian;
     }
 
+    @Override
+    public String toString() {
+        return "Human {" + super.toString() + "vegetarian:" + vegetarian + "}";
+    }
+
 }
+
 
 

@@ -10,18 +10,17 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class ArrayService {
+public class CollactionService {
 
     private Random random;
     private int maximumSentient = 15;
     private Map<String, List<? extends Object>> classMap = new HashMap<>();
 
-    public ArrayService(Random random) {
+    public CollactionService(Random random) {
         this.random = random;
     }
 
-
-    public Map<String, List<? extends Object>> fillAllReadyArray() {
+    public Map<String, List<? extends Object>> receiveAllClassMap() {
 
         classMap.put("Sentient", fillArraySentient());
         return classMap;
@@ -29,7 +28,7 @@ public class ArrayService {
 
     private List<? extends Sentient> fillArraySentient() {
 
-        PersonalDataGenerator personalDataGenerator = new PersonalDataGenerator();
+        PersonalDataGenerator personalDataGenerator = new PersonalDataGenerator(random);
 
         List<Sentient> sentientArray = new ArrayList();
 
@@ -52,7 +51,7 @@ public class ArrayService {
         return sentientArray;
     }
 
-    private <T> List<String> getNameOfObjectField(T currentObject) {
+    private <T> List<String> receiveNameOfObjectField(T currentObject) {
 
         List<String> fieldsNameArray = new ArrayList<>();
         Class MetadataObject = currentObject.getClass();
@@ -65,29 +64,34 @@ public class ArrayService {
         return fieldsNameArray;
     }
 
-    public void transformObjectArrayToMapFieldValueArray(List<? extends Object> currentArrayObject, Map<String, String> fieldValueMap) {
+    public void transformObjectArrayToFieldValueMap(List<? extends Object> currentArrayObject, Map<Object, Map<String, String>> fieldValueMap) {
+
+        Map<String, String> objectFieldNameMap = createAllObjectFieldsNameMap(currentArrayObject);
+
+        fieldValueMap.put("ColumnName", objectFieldNameMap);
 
         for (Object currentObject : currentArrayObject) {
 
-            List<String> fieldsNameArray = getNameOfObjectField(currentObject);
+            if (!fieldValueMap.containsKey(currentObject)) {
+                fieldValueMap.put(currentObject, new HashMap<>());
+            }
 
-            for (String fieldName : fieldsNameArray) {
+            for (String fieldName : objectFieldNameMap.keySet()) {
 
-                if (!fieldValueMap.containsKey(fieldName)) {
-                    fieldValueMap.put(fieldName, "");
-                }
+                Map<String, String> fieldMap = fieldValueMap.get(currentObject);
 
-                String fieldLine = fieldValueMap.get(fieldName);
                 try {
-                    Method fieldValue =  currentObject.getClass().getMethod("get" + fieldName);
-                    fieldLine = fieldLine + String.valueOf(fieldValue.invoke(currentObject)) + " \n ";
-                    fieldValueMap.put(fieldName, fieldLine);
+                    Method fieldValue = currentObject.getClass().getMethod("get" + fieldName);
+                    fieldMap.put(fieldName, String.valueOf(fieldValue.invoke(currentObject)));
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
+                    fieldMap.put(fieldName, "");
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
+                    fieldMap.put(fieldName, "");
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
+                    fieldMap.put(fieldName, "");
                 }
 
             }
@@ -96,13 +100,29 @@ public class ArrayService {
 
     }
 
+    private String firstUpperCase(String word) {
 
-    private String firstUpperCase(String word){
-
-        if(word == null || word.isEmpty()) return word;
+        if (word == null || word.isEmpty()) return word;
         return word.substring(0, 1).toUpperCase() + word.substring(1);
 
     }
 
+    private Map<String, String> createAllObjectFieldsNameMap(List<? extends Object> currentArrayObject) {
+
+        Map<String, String> fieldsNameMap = new HashMap<>();
+
+        for (Object currentObject : currentArrayObject) {
+
+            List<String> nameOfObjectField = receiveNameOfObjectField(currentObject);
+
+            for (String currentField : nameOfObjectField) {
+                if (!fieldsNameMap.containsKey(currentObject)) {
+                    fieldsNameMap.put(currentField, "");
+                }
+            }
+        }
+
+        return fieldsNameMap;
+    }
 
 }
