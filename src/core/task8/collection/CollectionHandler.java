@@ -54,12 +54,12 @@ public class CollectionHandler {
     private <T> List<String> receiveNameOfFieldObject(T currentObject) {
 
         List<String> fieldsNameArray = new ArrayList<>();
-        Class MetadataObject = currentObject.getClass();
-        while (MetadataObject != Object.class) {
-            for (Field field : MetadataObject.getDeclaredFields()) {
+        Class metadataObject = currentObject.getClass();
+        while (metadataObject != Object.class) {
+            for (Field field : metadataObject.getDeclaredFields()) {
                 fieldsNameArray.add(firstUpperCase(field.getName()));
             }
-            MetadataObject = MetadataObject.getSuperclass();
+            metadataObject = metadataObject.getSuperclass();
         }
         return fieldsNameArray;
     }
@@ -83,17 +83,10 @@ public class CollectionHandler {
                 try {
                     Method fieldValue = currentObject.getClass().getMethod("get" + fieldName);
                     fieldMap.put(fieldName, String.valueOf(fieldValue.invoke(currentObject)));
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                    fieldMap.put(fieldName, "");
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                    fieldMap.put(fieldName, "");
-                } catch (InvocationTargetException e) {
+                } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
                     e.printStackTrace();
                     fieldMap.put(fieldName, "");
                 }
-
             }
 
         }

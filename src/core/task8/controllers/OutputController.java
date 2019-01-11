@@ -19,22 +19,22 @@ public class OutputController {
             Map<String, String> valueMap = entry.getValue();
 
             if (firstEntry) {
-                column = column + "Class name" + columnSpaceLine;
+                column += "Class name" + columnSpaceLine;
                 for (String fieldName : valueMap.keySet()) {
-                    column = column + fieldName + columnSpaceLine;
+                    column += fieldName + columnSpaceLine;
                 }
                 System.out.println(column);
                 firstEntry = false;
                 continue;
             }
 
-            currentLine = currentLine + keyObject.getClass().getSimpleName() + receiveSpaceLineBetweenColumn("ObjectName", keyObject.getClass().getSimpleName(), columnSpaceLine);
+            currentLine += keyObject.getClass().getSimpleName() + receiveSpaceLineBetweenColumn("ObjectName", keyObject.getClass().getSimpleName(), columnSpaceLine);
 
             for (Map.Entry<String, String> entryField : valueMap.entrySet()) {
                 String fieldName = entryField.getKey();
                 String fieldValue = entryField.getValue();
                 String spaceLine = receiveSpaceLineBetweenColumn(fieldName, fieldValue, columnSpaceLine);
-                currentLine = currentLine + fieldValue + spaceLine;
+                currentLine += fieldValue + spaceLine;
             }
             System.out.println(currentLine);
         }
@@ -50,12 +50,12 @@ public class OutputController {
 
         if (fieldName.length() >= fieldValue.length()) {
             for (int x = 1; (fieldName.length() - fieldValue.length()) >= x; x++) {
-                spaceLine = spaceLine + " ";
+                spaceLine += " ";
             }
-            spaceLine = spaceLine + columnSpaceLine;
+            spaceLine += columnSpaceLine;
         } else {
             for (int x = 1; (columnSpaceLine.length() - (fieldValue.length() - fieldName.length())) >= x; x++) {
-                spaceLine = spaceLine + " ";
+                spaceLine += " ";
             }
         }
 

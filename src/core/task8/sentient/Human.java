@@ -1,6 +1,6 @@
 package core.task8.sentient;
 
-public class Human extends Sentient {
+public class Human extends Sentient implements Comparable{
 
     private boolean vegetarian;
 
@@ -18,6 +18,10 @@ public class Human extends Sentient {
         return "Human {" + super.toString() + "vegetarian:" + vegetarian + "}";
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return this.getFirstName().length() - this.getLastName().length();
+    }
 }
 
 

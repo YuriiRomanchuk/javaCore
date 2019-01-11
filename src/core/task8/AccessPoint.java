@@ -9,20 +9,19 @@ import java.util.*;
 
 public class AccessPoint {
 
-    Scanner in;
+    private Scanner in;
 
     public AccessPoint(InputStream inputStream) {
         this.in = new Scanner(inputStream);
     }
 
-    public void StartProgram() {
+    public void StartProgram(OutputController outputController, CollectionHandler collectionHandler) {
 
-        Random random = new Random();
-        OutputController outputController = new OutputController();
         InputController inputController = new InputController(in);
-        CollectionHandler collectionHandler = new CollectionHandler(random);
 
         Map<String, List<? extends Object>> classMap = collectionHandler.receiveObjectMap();
+
+        sortingObjects(classMap);
 
         int versionOfTable = inputController.receiveVariantOfTable();
 
@@ -44,6 +43,19 @@ public class AccessPoint {
             default:
                 System.out.println("You have not selected a variant of table. Choose 1 or 2");
                 break;
+        }
+
+    }
+
+    private void sortingObjects(Map<String, List<? extends Object>> classMap) {
+
+        Set<Object> ts = new TreeSet<>();
+        for (List<? extends Object> objectList : classMap.values()) {
+            ts.addAll(objectList);
+        }
+
+        for(Object currentObject : ts){
+            System.out.println(currentObject);
         }
 
     }
