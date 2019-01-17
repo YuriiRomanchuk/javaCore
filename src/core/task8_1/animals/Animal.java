@@ -4,11 +4,11 @@ public abstract class Animal implements Comparable {
 
     private int age;
 
-    public Animal(int age) {
+    Animal(int age) {
         this.age = age;
     }
 
-    public int getAge() {
+    int getAge() {
         return age;
     }
 
