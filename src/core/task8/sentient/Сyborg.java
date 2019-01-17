@@ -20,6 +20,7 @@ public class Сyborg extends Sentient implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return this.getFirstName().length() - this.getLastName().length();
+        Сyborg other = (Сyborg) o;
+        return this.getFirstName().length() - other.getFirstName().length();
     }
 }

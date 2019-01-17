@@ -30,7 +30,7 @@ public class CollectionHandler {
 
         PersonalDataGenerator personalDataGenerator = new PersonalDataGenerator(random);
 
-        List<Sentient> sentientArray = new ArrayList();
+        List<Sentient> sentientArray = new ArrayList<>();
 
         int quantityOfSentient = random.nextInt(maximumSentient);
 

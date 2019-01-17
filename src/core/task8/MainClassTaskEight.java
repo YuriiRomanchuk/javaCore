@@ -3,6 +3,7 @@ package core.task8;
 import core.task8.collection.CollectionHandler;
 import core.task8.controllers.InputController;
 import core.task8.controllers.OutputController;
+import core.task8.sentient.Sentient;
 
 import java.util.Random;
 

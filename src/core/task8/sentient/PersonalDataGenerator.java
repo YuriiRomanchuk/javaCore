@@ -5,7 +5,6 @@ import java.util.Random;
 public class PersonalDataGenerator {
 
     int maximum = 8;
-    int minimum = 1;
     int maximumOld = 100;
     Random random;
     private String[] lastNameArray = {"Reinor", "Smith", "Sparrow", "Turner", "Schwarzenegger", "Willis", "Cruise", "Baggins", "Hacker", "Resnick"};
@@ -38,7 +37,7 @@ public class PersonalDataGenerator {
     }
 
     private int randomNumber(int restriction) {
-        return random.nextInt(restriction) + minimum;
+        return random.nextInt(restriction);
     }
 
 }

@@ -1,6 +1,6 @@
 package core.task8.sentient;
 
-abstract public class Sentient {
+public abstract class Sentient {
 
     private String firstName;
     private String lastName;
