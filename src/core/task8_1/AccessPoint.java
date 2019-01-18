@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AccessPoint {
-
+    // TODO (Eugene): 1/18/2019 you don't really need Scanner, don't you?
     private Scanner in;
     private CollectionsGenerator collectionsGenerator;
 
@@ -18,6 +18,7 @@ public class AccessPoint {
         this.collectionsGenerator = collectionsGenerator;
     }
 
+    // TODO (Eugene): 1/18/2019 method name starts from lowercase
     public void StartProgram() {
 
         List<Animal> animalsList = collectionsGenerator.receiveAnimalsList();

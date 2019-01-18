@@ -9,6 +9,7 @@ public class Dog extends Animal {
     @Override
     public int compareTo(Object o) {
         Animal otherObject = (Animal) o;
+        // TODO (Eugene): 1/18/2019 if you need acces to age in your subclasses - use 'protected' instead of 'private' 
         return otherObject.getAge() - this.getAge();
     }
 }

@@ -14,6 +14,7 @@ public abstract class Animal implements Comparable {
 
     @Override
     public String toString() {
+        // TODO (Eugene): 1/18/2019 when you concatenate string with other types, you don't need to use String.valueOf if the first element in concatenation is string
         return this.getClass().getSimpleName() + "  " + this.getClass().getName() + "  " + String.valueOf(this.getAge());
     }
 }
