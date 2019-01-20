@@ -1,6 +1,6 @@
 package core.task8_1;
 
-public interface TestInterface <T>{
+public interface Creator<T>{
 
-    T createAnimalExtendsClass();
+    T create();
 }

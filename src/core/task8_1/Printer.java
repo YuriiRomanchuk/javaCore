@@ -1,4 +1,11 @@
 package core.task8_1;
 
-public class Printer {
+public interface Printer {
+
+    String getMessage();
+
+    default void print() {
+        System.out.println(getMessage());
+    }
+
 }
