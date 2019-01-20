@@ -49,13 +49,13 @@ public class AccessPoint {
 
     public List<Function<UserData, String>> prepareValidators() {
 
-        int MAXIMUM_LENTH = 7;
+        int maximumLenth = 7;
         List<String> forbiddenWords = Arrays.asList("люли", "рак", "гузно", "кака");
 
         List<Function<UserData, String>> passVerify = new ArrayList<>();
-        passVerify.add(ud -> ud.password.length() > MAXIMUM_LENTH ? String.format("Lenth > %s characters", MAXIMUM_LENTH) : "");
+        passVerify.add(ud -> ud.getPassword().length() > maximumLenth ? String.format("Lenth > %s characters", maximumLenth) : "");
         passVerify.add(ud -> {
-            String message = forbiddenWords.stream().filter(ud.password::contains).collect(Collectors.joining(","));
+            String message = forbiddenWords.stream().filter(ud.getPassword()::contains).collect(Collectors.joining(","));
             return message.isEmpty() ? "" : String.format("Current password contains forbidden word: %s", message);
         });
 
