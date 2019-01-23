@@ -40,16 +40,16 @@ public class AccessPoint {
 
         List<Animal> animals = collectionsGenerator.createList(creators);
 
-        for (Animal animal : animals) {
-            System.out.println(animal);
+        for (Animal animals : animals) {
+            System.out.println(animals);
         }
 
         System.out.println("-------------------------------------");
 
         List<Animal> animals2 = collectionsGenerator.createList(Fish::new, () -> new Dog(5));
 
-        for (Animal animal : animals2) {
-            System.out.println(animal);
+        for (Animal animals : animals2) {
+            System.out.println(animals);
         }
 
         SortingCollections<Animal> sortingCollections = new SortingCollections<>();
