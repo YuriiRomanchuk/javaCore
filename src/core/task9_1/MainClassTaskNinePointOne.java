@@ -1,8 +1,5 @@
 package core.task9_1;
 
-import java.io.InputStream;
-import java.util.List;
-
 public class MainClassTaskNinePointOne {
 
 

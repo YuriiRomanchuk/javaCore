@@ -1,11 +1,10 @@
 package core.task9;
 
-import core.task9.creatures.Creature;
-import core.task9.creatures.CreatureGenerator;
-import core.task9.creatures.PersonalDataGenerator;
+import core.task9.creatures.*;
 import core.task9.encryption.Encrypting;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Supplier;
@@ -15,13 +14,13 @@ public class AccessPoint {
 
     private InputController inputController;
     private PersonalDataGenerator personalDataGenerator;
-    private CreatureGenerator creatureGenerator;
+    private ObjectGenerator creatureGenerator;
     private Encrypting encrypting;
 
-    public AccessPoint(InputStream inputStream, PersonalDataGenerator personalDataGenerator, CreatureGenerator creatureGenerator) {
+    public AccessPoint(InputStream inputStream, PersonalDataGenerator personalDataGenerator, ObjectGenerator objectGenerator) {
         Scanner in = new Scanner(inputStream);
         this.personalDataGenerator = personalDataGenerator;
-        this.creatureGenerator = creatureGenerator;
+        this.creatureGenerator = objectGenerator;
         inputController = new InputController(in);
         encrypting = new Encrypting();
     }
@@ -30,7 +29,7 @@ public class AccessPoint {
 
         int shift = inputController.receiveShift();
 
-        List<Supplier<Creature>> creaturesSupplier = creatureGenerator.generateCreator(personalDataGenerator);
+        List<Supplier<Creature>> creaturesSupplier = prepareSuppliers(personalDataGenerator);
         List<Creature> creatures = creatureGenerator.generateCreatures(creaturesSupplier);
         creatures.forEach(creature -> System.out.println(creature.toString()));
 
@@ -44,6 +43,15 @@ public class AccessPoint {
         System.out.println("----------------");
         ecodeLines.forEach(s -> System.out.println(encrypting.transformString(s, shift, false)));
 
+    }
+
+    public List<Supplier<Creature>> prepareSuppliers(PersonalDataGenerator personalDataGenerator) {
+
+        List<Supplier<Creature>> creaturesSupplier = new ArrayList<>();
+        creaturesSupplier.add(() -> new Cyborg(personalDataGenerator.generateLastName(), personalDataGenerator.generateFirstName(), personalDataGenerator.generateAge()));
+        creaturesSupplier.add(() -> new Human(personalDataGenerator.generateLastName(), personalDataGenerator.generateFirstName(), personalDataGenerator.generateAge()));
+
+        return creaturesSupplier;
     }
 
 }
