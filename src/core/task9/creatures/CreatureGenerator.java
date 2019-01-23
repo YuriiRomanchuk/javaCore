@@ -17,7 +17,7 @@ public class CreatureGenerator<T> {
         return creaturesSupplier;
     }
 
-    public List<T> generateCreatures(List<Supplier<Creature>> currentObjects) {
+    public List<T> generateCreatures(List<Supplier<T>> currentObjects) {
 
         List<T> createdObjects = new ArrayList<>();
         int totalItems = 5;
@@ -25,7 +25,7 @@ public class CreatureGenerator<T> {
 
         for (int x = 0; x <= totalItems; x++) {
             int index = random.nextInt(currentObjects.size());
-            createdObjects.add((T) currentObjects.get(index).get());
+            createdObjects.add(currentObjects.get(index).get());
         }
 
         return createdObjects;
