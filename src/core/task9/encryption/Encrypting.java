@@ -17,12 +17,16 @@ public class Encrypting {
 
     public String transformString(String unencryptedLine, int shift, boolean isEncode) {
 
+        if (!isEncode) {
+            shift = (numbersOfAlphabet - shift) % numbersOfAlphabet + numbersOfAlphabet;
+        }
+
         StringBuilder cryptedLine = new StringBuilder();
 
         for (char symbol : unencryptedLine.toCharArray()) {
             if (Character.isLetter(symbol)) {
                 char firstSymbol = upperFirstSymbol.get(isUpperCase(symbol));
-                cryptedLine.append((isEncode) ? Character.toChars(firstSymbol + (symbol - firstSymbol + shift) % numbersOfAlphabet) : Character.toChars(firstSymbol + (symbol - firstSymbol - shift) % numbersOfAlphabet));
+                cryptedLine.append(Character.toChars(firstSymbol + (symbol - firstSymbol + shift) % numbersOfAlphabet));
             } else {
                 cryptedLine.append(symbol);
             }
