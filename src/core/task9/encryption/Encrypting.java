@@ -8,7 +8,7 @@ import static java.lang.Character.isUpperCase;
 public class Encrypting {
 
     private Map<Boolean, Character> upperFirstSymbol = new HashMap<>();
-    private int numbersOfAlphabet = 26;
+    private static final int NUMBERS_OF_ALPHABET = 26;
 
     public Encrypting() {
         this.upperFirstSymbol.put(true, 'A');
@@ -18,7 +18,7 @@ public class Encrypting {
     public String transformString(String unencryptedLine, int shift, boolean isEncode) {
 
         if (!isEncode) {
-            shift = (numbersOfAlphabet - shift) % numbersOfAlphabet + numbersOfAlphabet;
+            shift = (NUMBERS_OF_ALPHABET - shift) % NUMBERS_OF_ALPHABET + NUMBERS_OF_ALPHABET;
         }
 
         StringBuilder cryptedLine = new StringBuilder();
@@ -26,7 +26,7 @@ public class Encrypting {
         for (char symbol : unencryptedLine.toCharArray()) {
             if (Character.isLetter(symbol)) {
                 char firstSymbol = upperFirstSymbol.get(isUpperCase(symbol));
-                cryptedLine.append(Character.toChars(firstSymbol + (symbol - firstSymbol + shift) % numbersOfAlphabet));
+                cryptedLine.append(Character.toChars(firstSymbol + (symbol - firstSymbol + shift) % NUMBERS_OF_ALPHABET));
             } else {
                 cryptedLine.append(symbol);
             }

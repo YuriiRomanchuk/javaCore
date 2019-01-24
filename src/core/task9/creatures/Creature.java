@@ -20,4 +20,16 @@ public abstract class Creature {
                 ", age=" + age +
                 '}';
     }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
 }
