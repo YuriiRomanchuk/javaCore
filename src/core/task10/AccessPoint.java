@@ -16,7 +16,7 @@ public class AccessPoint {
 
         while (start) {
 
-            boolean action = jFileController.recieveAction("Create new file or change existing?", "Create", "Open");
+            boolean action = jFileController.receiveAction("Create new file or change existing?", "Create", "Open");
 
             String currentText = !action ? fileStreamController.readFile(jFileController.receiveFilePath(true)) : "";
             String text = jFileController.changeText(encryptingText(currentText, false));
@@ -27,7 +27,7 @@ public class AccessPoint {
                 System.out.println("Text has not changed");
             }
 
-            start = jFileController.recieveAction("Сontinue to work with the program?", "Yes", "No");
+            start = jFileController.receiveAction("Сontinue to work with the program?", "Yes", "No");
 
         }
 

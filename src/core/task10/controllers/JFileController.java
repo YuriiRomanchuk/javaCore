@@ -35,7 +35,7 @@ public class JFileController {
 
     }
 
-    public boolean recieveAction(String text, String nameButtonOk, String nameButtonCancel) {
+    public boolean receiveAction(String text, String nameButtonOk, String nameButtonCancel) {
 
         UIManager.put("OptionPane.cancelButtonText", nameButtonCancel);
         UIManager.put("OptionPane.okButtonText", nameButtonOk);
