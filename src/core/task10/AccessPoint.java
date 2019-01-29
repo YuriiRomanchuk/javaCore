@@ -1,40 +1,42 @@
 package core.task10;
 
 import core.task10.controllers.FileStreamController;
-import core.task10.controllers.JFileController;
+import core.task10.controllers.InputController;
 import core.task9.encryption.Encrypting;
 
 public class AccessPoint {
 
-    private JFileController jFileController = new JFileController();
+    private InputController inputController = new InputController();
     private FileStreamController fileStreamController = new FileStreamController();
-    private Encrypting encrypting = new Encrypting();
+    private Encrypting encrypting = new Encrypting(6);
 
     public void startProgram() {
 
-        boolean start = true;
+        boolean continueWork = true;
 
-        while (start) {
+        while (continueWork) {
 
-            boolean action = jFileController.receiveAction("Create new file or change existing?", "Create", "Open");
+            boolean newFile = inputController.askIfCreateNewFile();
 
-            String currentText = !action ? fileStreamController.readFile(jFileController.receiveFilePath(true)) : "";
-            String text = jFileController.changeText(encryptingText(currentText, false));
+            String decryptText = "";
 
-            if (text.compareTo(currentText) != 0) {
-                fileStreamController.writeFile(encryptingText(text, true), jFileController.receiveFilePath(false));
-            } else {
-                System.out.println("Text has not changed");
+            if (!newFile) {
+                String OpenFilePath = inputController.receiveOpenFilePath();
+                String currentText = fileStreamController.readFile(OpenFilePath);
+                decryptText = encrypting.decrypt(currentText);
             }
 
-            start = jFileController.receiveAction("Сontinue to work with the program?", "Yes", "No");
+            String text = inputController.showChangeTextRequest(decryptText);
 
+            if (text.compareTo(decryptText) != 0) {
+                fileStreamController.writeFile(encrypting.encrypt(text), inputController.receiveSaveFilePath());
+            } else {
+                inputController.showInformationDialog("Text has not changed");
+            }
+
+            continueWork = inputController.askIfContinueWork();
         }
 
-    }
-
-    private String encryptingText(String text, boolean isEncode) {
-        return encrypting.transformString(text, 6, isEncode);
     }
 
 }

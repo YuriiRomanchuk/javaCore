@@ -22,12 +22,10 @@ public class AccessPoint {
         this.personalDataGenerator = personalDataGenerator;
         this.creatureGenerator = objectGenerator;
         inputController = new InputController(in);
-        encrypting = new Encrypting();
+        encrypting = new Encrypting(inputController.receiveShift());
     }
 
     public void startProgram() {
-
-        int shift = inputController.receiveShift();
 
         List<Supplier<Creature>> creaturesSupplier = prepareSuppliers(personalDataGenerator);
         List<Creature> creatures = creatureGenerator.generateCreatures(creaturesSupplier);
@@ -36,12 +34,12 @@ public class AccessPoint {
         System.out.println("----------------");
 
         List<String> ecodeLines = creatures.stream()
-                .map(creature -> encrypting.transformString(creature.toString(), shift, true))
+                .map(creature -> encrypting.encrypt(creature.toString()))
                 .collect(Collectors.toList());
         ecodeLines.forEach(System.out::println);
 
         System.out.println("----------------");
-        ecodeLines.forEach(s -> System.out.println(encrypting.transformString(s, shift, false)));
+        ecodeLines.forEach(s -> System.out.println(encrypting.decrypt(s)));
 
     }
 

@@ -9,17 +9,15 @@ public class Encrypting {
 
     private Map<Boolean, Character> upperFirstSymbol = new HashMap<>();
     private static final int NUMBERS_OF_ALPHABET = 26;
+    private int shift;
 
-    public Encrypting() {
+    public Encrypting(int shift) {
         this.upperFirstSymbol.put(true, 'A');
         this.upperFirstSymbol.put(false, 'a');
+        this.shift = shift;
     }
 
-    public String transformString(String unencryptedLine, int shift, boolean isEncode) {
-
-        if (!isEncode) {
-            shift = (NUMBERS_OF_ALPHABET - shift) % NUMBERS_OF_ALPHABET + NUMBERS_OF_ALPHABET;
-        }
+    private String transformString(String unencryptedLine) {
 
         StringBuilder cryptedLine = new StringBuilder();
 
@@ -33,4 +31,14 @@ public class Encrypting {
         }
         return cryptedLine.toString();
     }
+
+    public String encrypt(String unencryptedLine) {
+        return transformString(unencryptedLine);
+    }
+
+    public String decrypt(String unencryptedLine) {
+        shift = (NUMBERS_OF_ALPHABET - shift) % NUMBERS_OF_ALPHABET + NUMBERS_OF_ALPHABET;
+        return transformString(unencryptedLine);
+    }
+
 }

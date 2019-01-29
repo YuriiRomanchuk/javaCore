@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.io.File;
 import java.util.Optional;
 
-public class JFileController {
+public class InputController {
 
     private JFileChooser fileChooser = new JFileChooser();
 
-    public String receiveFilePath(boolean openFile) {
+    private String receiveFilePath(boolean openFile) {
 
         int ret = openFile ? fileChooser.showDialog(null, "Open file") : fileChooser.showSaveDialog(null);
 
@@ -20,10 +20,9 @@ public class JFileController {
         }
     }
 
-    public String changeText(String currentText) {
+    public String showChangeTextRequest(String currentText) {
 
-        UIManager.put("OptionPane.cancelButtonText", "Cancel");
-        UIManager.put("OptionPane.okButtonText", "Ok");
+        nameOfButton("Ok", "Cancel");
 
         Optional optionalText = Optional.ofNullable(JOptionPane.showInputDialog("", currentText));
 
@@ -35,13 +34,41 @@ public class JFileController {
 
     }
 
-    public boolean receiveAction(String text, String nameButtonOk, String nameButtonCancel) {
+    private boolean receiveAction(String text, String nameButtonOk, String nameButtonCancel) {
 
-        UIManager.put("OptionPane.cancelButtonText", nameButtonCancel);
-        UIManager.put("OptionPane.okButtonText", nameButtonOk);
+        nameOfButton(nameButtonOk, nameButtonCancel);
 
         int res = JOptionPane.showConfirmDialog(null, text, "",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        nameOfButton("Ok", "Cancel");
+
         return res == JOptionPane.OK_OPTION;
     }
+
+    private void nameOfButton(String nameButtonOk, String nameButtonCancel) {
+        UIManager.put("OptionPane.cancelButtonText", nameButtonCancel);
+        UIManager.put("OptionPane.okButtonText", nameButtonOk);
+    }
+
+    public void showInformationDialog(String message) {
+        JOptionPane.showMessageDialog(null, message);
+    }
+
+    public boolean askIfCreateNewFile() {
+        return receiveAction("Create new file or change existing?", "Create", "Open");
+    }
+
+    public boolean askIfContinueWork() {
+        return receiveAction("Continue to work with the program?", "Yes", "No");
+    }
+
+    public String receiveOpenFilePath() {
+        return receiveFilePath(true);
+    }
+
+    public String receiveSaveFilePath() {
+        return receiveFilePath(false);
+    }
+
 }
