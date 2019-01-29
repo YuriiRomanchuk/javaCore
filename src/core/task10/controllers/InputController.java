@@ -14,7 +14,7 @@ public class JFileController {
 
         if (ret == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-           return file.getAbsolutePath();
+            return file.getAbsolutePath();
         } else {
             return "";
         }
