@@ -1,4 +1,4 @@
-package task11;
+package core.task11;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;

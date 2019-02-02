@@ -1,13 +1,14 @@
-package task11;
+package core.task11;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class MessageController {
 
     private Scanner in;
 
-    public MessageController(Scanner in) {
-        this.in = in;
+    public MessageController(InputStream in) {
+        this.in = new Scanner(in);
     }
 
     public String receiveVerifiableLine() {

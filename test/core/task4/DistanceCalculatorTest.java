@@ -1,4 +1,4 @@
-package task4;
+package core.task4;
 
 
 import org.junit.Assert;

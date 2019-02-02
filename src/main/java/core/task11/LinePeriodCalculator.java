@@ -1,4 +1,9 @@
-package task11;
+package core.task11;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class LinePeriodCalculator {
 
@@ -24,5 +29,19 @@ public class LinePeriodCalculator {
         }
 
         return minPeriod;
+    }
+
+    public int receiveMinimumLinePeriodLite(String periodLine) {
+
+        char[] charsLine = periodLine.toCharArray();
+        Character[] newArray = IntStream.range(0, charsLine.length)
+                .mapToObj(i -> charsLine[i])
+                .toArray(Character[]::new);
+
+        List<Character> uniqueSymbols = Arrays.stream(newArray)
+                .distinct()
+                .collect(Collectors.toList());
+
+        return uniqueSymbols.size();
     }
 }
