@@ -1,4 +1,4 @@
-package core.task11;
+package src.main.java.core.task11;
 
 import java.util.Arrays;
 import java.util.List;
